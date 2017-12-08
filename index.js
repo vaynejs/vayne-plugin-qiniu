@@ -26,7 +26,7 @@ class VaynePluginQiniu {
     this.name = 'VaynePluginQiniu'
 
     if (opts.isDisable) {
-
+      return {}
     }
 
     // 校验必填的列
