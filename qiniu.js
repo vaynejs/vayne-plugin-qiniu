@@ -1,4 +1,4 @@
-// 这个来源于 @see https://github.com/lyfeyaj/qn-webpack 要做一些定制之后
+// 这个来源于 @see https://github.com/lyfeyaj/qn-webpack
 const path = require('path')
 const qiniu = require('qiniu')
 const ora = require('ora')
