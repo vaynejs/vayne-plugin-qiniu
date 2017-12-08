@@ -21,11 +21,13 @@ class VaynePluginQiniu {
   constructor(config, log, utils) {
     log.debug('开始解析 vayne qiniu 插件')
     let qiniu = config.qiniu || {}
-    let opts = _.defaults(defaultOptions, qiniu)
+    let opts = _.assign(defaultOptions, qiniu)
+    opts.log = log
     log.debug(opts)
     this.name = 'VaynePluginQiniu'
 
     if (opts.isDisable) {
+      log.warn('VaynePluginQiniu 插件以被禁用 可设置isDisable 未false 开启 ')
       return {}
     }
 
@@ -34,7 +36,7 @@ class VaynePluginQiniu {
     vaildField.forEach(field => {
       let val = opts[field]
       if (_.isUndefined(val)) {
-        log.fatal(`VaynePluginQiniu 插件 参数${val} 必须填写`)
+        log.fatal(`VaynePluginQiniu 插件 参数${field} 必须填写`)
       }
     })
 

@@ -41,6 +41,7 @@ class QiniuPlugin {
   }
 
   apply(compiler) {
+    let self = this
     compiler.plugin('after-emit', (compilation, callback) => {
       let assets = compilation.assets
       let hash = compilation.hash
@@ -117,6 +118,7 @@ class QiniuPlugin {
       const execStack = function(err) {
         if (err) {
           console.log('\n')
+          self.options.log.error('Vayne Qiniu Plugin Error:', err)
           return Promise.reject(err)
         }
 
