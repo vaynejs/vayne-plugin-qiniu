@@ -27,15 +27,22 @@ module.exports = {
 
 ```js
 module.exports = {
+  plugins: [
+    'vayne-plugin-qiniu' // 获取简写 qiniu
+  ],
   qiniu: {
+    isDisable: false, // 是否禁用 某些情况下 需要禁用 cdn 设为true 则禁用上传 默认是false
     accessKey: 'AccessKey', // 七牛 AccessKey
     secretKey: 'secretKey', // 七牛 secretKey
     bucket: 'my-bucket', // 七牛存储对象名称
-    path: '[hash]', // 存储路径， 默认为 [hash:8]
+    path: '[hash]', // 存储路径， 默认为 [hash]
     exclude: /index\.html$/, // 可选，排除特定文件，正则表达式，默认 /index\.html$/
     include: /app\.js$/, // 可选，指定要上传的文件，正则表达式，如: /app\.js$/
     batch: 20, // 批量上传文件并发数，默认 20
     zone: 'Zone_z0' // 可选，存储在七牛的机房（华东 Zone_z0、华北 Zone_z1、华南 Zone_z2、北美 Zone_na0）
+  },
+  build: {
+    assetsPublicPath: '//xxx.域名.com/[hash]/'
   }
 }
 ```
