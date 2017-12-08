@@ -1,6 +1,6 @@
 {
   "name": "vayne-plugin-qiniu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "vayne 七牛云上传插件",
   "author": "谢仁洪 <xierenhong@renrenche.com>",
   "main": "index.js",
