@@ -21,7 +21,7 @@ class VaynePluginQiniu {
   constructor(config, log, utils) {
     log.debug('开始解析 vayne qiniu 插件')
     let qiniu = config.qiniu || {}
-    let opts = _.defaultsDeep(defaultOptions, qiniu)
+    let opts = _.defaults(defaultOptions, qiniu)
     log.debug(opts)
     this.name = 'VaynePluginQiniu'
 
