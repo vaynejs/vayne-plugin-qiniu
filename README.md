@@ -17,7 +17,7 @@ npm i vayne-plugin-qiniu -D
 ```js
 module.exports = {
   plugins: [
-    'vayne-plugin-qiniu' // 获取简写 stylelint
+    'vayne-plugin-qiniu' // 获取简写 qiniu
   ]
 }
 ```
